@@ -21,7 +21,7 @@ namespace SerializationLib
             
             foreach (var variable in fields)
             {
-                if (variable.FieldType.IsPrimitive)
+                if (variable.FieldType.IsValueType || variable.FieldType.Name == "String")
                 {
                     res += $"{variable.GetValue(obj)}|";
                 }
